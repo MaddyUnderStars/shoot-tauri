@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: 'true'
       
       - name: install dependencies
         run: |
@@ -33,7 +35,10 @@ jobs:
           workspaces: './src-tauri -> target'
 
       - name: install frontend dependencies
-        run: npm install
+        run: |
+          npm install
+          cd shoot-client
+          npm install
 
       - uses: tauri-apps/tauri-action@v0
         env:
