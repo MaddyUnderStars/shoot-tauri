@@ -1,35 +1,37 @@
 {
-  "$schema": "https://schema.tauri.app/config/2",
-  "productName": "shoot-tauri",
-  "version": "0.1.0",
-  "identifier": "dev.understars.shoot",
-  "build": {
-    "beforeDevCommand": "npm run dev",
-    "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "npm run build",
-    "frontendDist": "../dist"
-  },
-  "app": {
-    "windows": [
-      {
-        "title": "shoot-tauri",
-        "width": 800,
-        "height": 600
-      }
-    ],
-    "security": {
-      "csp": null
-    }
-  },
-  "bundle": {
-    "active": true,
-    "targets": "all",
-    "icon": [
-      "icons/32x32.png",
-      "icons/128x128.png",
-      "icons/128x128@2x.png",
-      "icons/icon.icns",
-      "icons/icon.ico"
-    ]
-  }
+	"$schema": "https://schema.tauri.app/config/2",
+	"productName": "Shoot",
+	"version": "0.0.1",
+	"identifier": "dev.understars.shoot",
+	"build": {
+		"beforeDevCommand": "cd shoot-client && npm run dev -- --host",
+		"devUrl": "http://localhost:5173",
+		"beforeBuildCommand": "cd shoot-client && npm run build",
+		"frontendDist": "../shoot-client/dist"
+	},
+	"app": {
+		"windows": [
+			{
+				"title": "Shoot",
+				"width": 800,
+				"height": 600
+			}
+		],
+		"security": {
+			"csp": null
+		}
+	},
+	"bundle": {
+		"category": "SocialNetworking",
+		"shortDescription": "Activitypub federated instant messenger",
+		"active": true,
+		"targets": "all",
+		"icon": [
+			"icons/32x32.png",
+			"icons/128x128.png",
+			"icons/128x128@2x.png",
+			"icons/icon.icns",
+			"icons/icon.ico"
+		]
+	}
 }

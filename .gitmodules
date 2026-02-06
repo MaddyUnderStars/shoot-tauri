@@ -1,0 +1,3 @@
+[submodule "shoot-client"]
+	path = shoot-client
+	url = git@github.com:MaddyUnderStars/shoot-client.git
