@@ -19,7 +19,7 @@ jobs:
           #- platform: 'macos-latest'
           #  args: '--verbose --target x86_64-apple-darwin --debug'
           - platform: 'ubuntu-22.04'
-            args: '--verbose --debug'
+            args: '--verbose'
           #- platform: 'windows-latest'
           #  args: '--verbose --debug'
           #- platform: 'ubuntu-24.04-arm'
@@ -27,7 +27,7 @@ jobs:
           #- platform: 'windows-11-arm'
           #  args: '--verbose --debug'
           - platform: 'ubuntu-latest'
-            args: '--verbose --debug'
+            args: '--verbose'
             mobile: 'android'
           # can't test without an apple account
           #- platform: 'macos-26'
