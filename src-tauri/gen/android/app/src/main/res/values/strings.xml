@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">shoot-tauri</string>
-    <string name="main_activity_title">shoot-tauri</string>
+	<string name="app_name">Shoot</string>
+	<string name="main_activity_title">Shoot</string>
 </resources>

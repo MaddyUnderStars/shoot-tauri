@@ -1,7 +1,7 @@
 {
 	"$schema": "https://schema.tauri.app/config/2",
 	"productName": "Shoot",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"identifier": "dev.understars.shoot",
 	"build": {
 		"beforeDevCommand": "cd shoot-client && npm run dev -- --host",
@@ -22,6 +22,10 @@
 		}
 	},
 	"bundle": {
+		"android": {
+			"autoIncrementVersionCode": false,
+			"minSdkVersion": 24
+		},
 		"category": "SocialNetworking",
 		"shortDescription": "Activitypub federated instant messenger",
 		"active": true,
