@@ -111,11 +111,17 @@ jobs:
           base64 -d <<< "${{ secrets.ANDROID_KEY_BASE64 }}" > $RUNNER_TEMP/keystore.jks
           echo "storeFile=$RUNNER_TEMP/keystore.jks" >> keystore.properties
 
+      - name: mobile env vars
+        if: matrix.mobile == 'android'
+        run: |
+              echo "VITE_IS_MOBILE_TAURI=1" >> "$GITHUB_ENV"
+
       - name: Preconfigured Tauri Project
         uses: tauri-apps/tauri-action@8236c82510173ef930d644f38790c4cf3fd43cf2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
+
         with:
           tagName: app-v__VERSION__
           releaseName: 'App v__VERSION__'
