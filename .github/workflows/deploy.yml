@@ -21,7 +21,7 @@ jobs:
           #- platform: 'macos-latest'
           #  args: '--verbose --target x86_64-apple-darwin --debug'
           - platform: 'ubuntu-22.04'
-            args: '--verbose'
+            args: ''
           #- platform: 'windows-latest'
           #  args: '--verbose --debug'
           #- platform: 'ubuntu-24.04-arm'
@@ -29,8 +29,10 @@ jobs:
           #- platform: 'windows-11-arm'
           #  args: '--verbose --debug'
           - platform: 'ubuntu-latest'
-            args: '--verbose'
+            args: ''
             mobile: 'android'
+            env:
+              - VITE_IS_MOBILE_TAURI: '1'
           # can't test without an apple account
           #- platform: 'macos-26'
           #  args: '--verbose --debug'
@@ -112,11 +114,6 @@ jobs:
           echo "password=${{ secrets.ANDROID_KEY_PASSWORD }}" >> keystore.properties
           base64 -d <<< "${{ secrets.ANDROID_KEY_BASE64 }}" > $RUNNER_TEMP/keystore.jks
           echo "storeFile=$RUNNER_TEMP/keystore.jks" >> keystore.properties
-
-      - name: mobile env vars
-        if: matrix.mobile == 'android'
-        run: |
-              echo "VITE_IS_MOBILE_TAURI=1" >> "$GITHUB_ENV"
 
       - name: Preconfigured Tauri Project
         uses: tauri-apps/tauri-action@8236c82510173ef930d644f38790c4cf3fd43cf2
