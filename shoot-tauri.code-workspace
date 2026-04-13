@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "shoot-client",
+			"name": "client"
+		},
+		{
+			"path": "src-tauri",
+			"name": "tauri"
+		},
+		{
+			"path": "."
+		},
+	],
+	"settings": {}
+}
