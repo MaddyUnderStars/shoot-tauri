@@ -16,6 +16,7 @@ pub fn run() {
 
     builder
         .plugin(tauri_plugin_opener::init())
+        .plugin(tauri_plugin_notifications::init())
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
